@@ -49,6 +49,58 @@ TEST_CASE("Vec2 /=", "[Vec2 divide]"){
   REQUIRE(v.y == Approx(1.4));
 }
 
+TEST_CASE("Vec2 + Vec2", "[Vec2 add]"){
+  Vec2 v{1.5, -1.5};
+  Vec2 u{v};
+  Vec2 z = v + u;
+  Vec2 w = z + v;
+  REQUIRE(z.x == Approx(3.0));
+  REQUIRE(z.y == Approx(-3.0));
+  REQUIRE(w.x == Approx(4.5));
+  REQUIRE(w.y == Approx(-4.5));
+}
+
+TEST_CASE("Vec2 - Vec2", "[Vec2 sub]"){
+  Vec2 v{1.5, -1.5};
+  Vec2 u{v};
+  Vec2 z = v - u;
+  Vec2 w = z - v;
+  REQUIRE(z.x == 0.0);
+  REQUIRE(z.y == 0.0);
+  REQUIRE(w.x == Approx(-1.5));
+  REQUIRE(w.y == Approx(1.5));
+}
+
+TEST_CASE("Vec2 * float", "[Vec2 mult]"){
+  Vec2 v{1.5, -1.5};
+  float u = 2.0;
+  float zero = 0.0;
+  Vec2 z = v * u;
+  Vec2 w = z * u;
+  Vec2 y = zero * v;
+  REQUIRE(z.x == Approx(3.0));
+  REQUIRE(z.y == Approx(-3.0));
+  REQUIRE(w.x == Approx(6.0));
+  REQUIRE(w.y == Approx(-6.0));
+  REQUIRE(y.x == 0.0);
+  REQUIRE(y.y == 0.0);
+}
+
+TEST_CASE("Vec2 / float", "[Vec2 div]"){
+  Vec2 v{1.5, -1.5};
+  float u = 2.0;
+  float zero = 0.0;
+  Vec2 z = v / u;
+  Vec2 w = z / u;
+  Vec2 y = v / zero;
+  REQUIRE(z.x == Approx(0.75));
+  REQUIRE(z.y == Approx(-0.75));
+  REQUIRE(w.x == Approx(0.375));
+  REQUIRE(w.y == Approx(-0.375));
+  REQUIRE(y.x == Approx(1.5));
+  REQUIRE(y.y == Approx(-1.5));
+}
+
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);
