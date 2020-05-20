@@ -4,6 +4,8 @@
 #include "vec2.hpp"
 #include "mat2.hpp"
 #include "color.hpp"
+#include "rectangle.hpp"
+#include "circle.hpp"
 
 TEST_CASE("Vec2 init", "[Vec2]"){
   Vec2 v;
@@ -139,6 +141,14 @@ TEST_CASE("color_init", "[color]"){
   REQUIRE(green.r == 0.0);
   REQUIRE(green.g == 1.0);
   REQUIRE(green.b == 0.0);
+}
+
+TEST_CASE("rec", "[rec]"){
+  
+}
+
+TEST_CASE("circle", "[circle]"){
+  
 }
 
 int main(int argc, char *argv[])
