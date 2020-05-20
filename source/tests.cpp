@@ -115,6 +115,20 @@ TEST_CASE("mat2 init", "[mat2]"){
   REQUIRE(m2.e_11 == Approx(2.5));
 }
 
+TEST_CASE("mat2 mass tests", "[mat2_func]"){
+  Mat2 m1;
+  Mat2 m2{2.5, 5.0, 0.5, -1.5};
+  Vec2 v1{2.5, -3.0};
+  REQUIRE(m1.det() == 1);
+  REQUIRE(m2.det() == Approx(-6.25));
+  Vec2 v2 = m2 * v1;
+  REQUIRE(v2.x == Approx(4.75));
+  REQUIRE(v2.y == Approx(17.0));
+  transpose(m2);
+  REQUIRE(m2.e_01 == Approx(5.0));
+  REQUIRE(m2.e_10 == Approx(0.5));
+}
+
 int main(int argc, char *argv[])
 {
   return Catch::Session().run(argc, argv);
