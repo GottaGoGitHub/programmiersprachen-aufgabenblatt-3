@@ -11,6 +11,8 @@ class Circle{
 
         Circle(Vec2 const& v1, float radius, Color const& color):
         center_{v1}, radius_{radius}, color_{color}{}
+
+        float circumference();
         
     private:
         Vec2 center_;

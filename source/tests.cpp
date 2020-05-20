@@ -144,11 +144,23 @@ TEST_CASE("color_init", "[color]"){
 }
 
 TEST_CASE("rec", "[rec]"){
-  
+  Vec2 v1{1.0, 2.0};
+  Vec2 v2{4.5, 8.0};
+  Color clr;
+  Rectangle rec{v1, v2, clr};
+  REQUIRE(rec.circumference() == Approx(72.0));
+}
+
+TEST_CASE("cirlce", "[circ]"){
+  Vec2 ctr{4.0, 4.0};
+  float rad = 5.0;
+  Color clr;
+  Circle circ{ctr, rad, clr};
+  REQUIRE(circ.circumference() == Approx(31.416));
 }
 
 TEST_CASE("circle", "[circle]"){
-  
+
 }
 
 int main(int argc, char *argv[])
