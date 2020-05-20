@@ -2,6 +2,7 @@
 #include <catch.hpp>
 #include <iostream>
 #include "vec2.hpp"
+#include "mat2.hpp"
 
 TEST_CASE("Vec2 init", "[Vec2]"){
   Vec2 v;
@@ -99,6 +100,19 @@ TEST_CASE("Vec2 / float", "[Vec2 div]"){
   REQUIRE(w.y == Approx(-0.375));
   REQUIRE(y.x == Approx(1.5));
   REQUIRE(y.y == Approx(-1.5));
+}
+
+TEST_CASE("mat2 init", "[mat2]"){
+  Mat2 m1;
+  Mat2 m2{1.0, 2.0, -3.5, 2.5};
+  REQUIRE(m1.e_00 == Approx(1.0));
+  REQUIRE(m1.e_01 == 0.0);
+  REQUIRE(m1.e_10 == 0.0);
+  REQUIRE(m1.e_11 == Approx(1.0));
+  REQUIRE(m2.e_00 == Approx(1.0));
+  REQUIRE(m2.e_01 == Approx(2.0));
+  REQUIRE(m2.e_10 == Approx(-3.5));
+  REQUIRE(m2.e_11 == Approx(2.5));
 }
 
 int main(int argc, char *argv[])
