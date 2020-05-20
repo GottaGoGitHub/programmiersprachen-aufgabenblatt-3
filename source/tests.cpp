@@ -3,6 +3,7 @@
 #include <iostream>
 #include "vec2.hpp"
 #include "mat2.hpp"
+#include "color.hpp"
 
 TEST_CASE("Vec2 init", "[Vec2]"){
   Vec2 v;
@@ -127,6 +128,17 @@ TEST_CASE("mat2 mass tests", "[mat2_func]"){
   transpose(m2);
   REQUIRE(m2.e_01 == Approx(5.0));
   REQUIRE(m2.e_10 == Approx(0.5));
+}
+
+TEST_CASE("color_init", "[color]"){
+  Color c;
+  Color green{0.0, 1.0, 0.0};
+  REQUIRE(c.r == 0.5);
+  REQUIRE(c.g == 0.5);
+  REQUIRE(c.b == 0.5);
+  REQUIRE(green.r == 0.0);
+  REQUIRE(green.g == 1.0);
+  REQUIRE(green.b == 0.0);
 }
 
 int main(int argc, char *argv[])
