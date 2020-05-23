@@ -148,7 +148,7 @@ TEST_CASE("rec", "[rec]"){
   Vec2 v2{4.5, 8.0};
   Color clr;
   Rectangle rec{v1, v2, clr};
-  REQUIRE(rec.circumference() == Approx(72.0));
+  REQUIRE(rec.circumference() == Approx(25.0));
 }
 
 TEST_CASE("cirlce", "[circ]"){

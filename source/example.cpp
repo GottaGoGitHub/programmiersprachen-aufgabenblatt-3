@@ -2,6 +2,8 @@
 #include <GLFW/glfw3.h>
 #include <utility>
 #include <cmath>
+#include "rectangle.hpp"
+#include "color.hpp"
 
 
 int main(int argc, char* argv[])
@@ -37,6 +39,11 @@ int main(int argc, char* argv[])
                     1.0,0.0,0.0, // color with r,g,b in [0.0, 1.0]
                     1.0);        // line thickness = 1.0 * default thickness
     }
+
+    Color red{1.0, 0.0, 0.0};
+    Vec2 v1{10.0, 20.0};
+    Vec2 v2{60.0, 70.0};
+    Rectangle rec{v1, v2, red};
 
     win.draw_line(0, mouse_position.second, 10, mouse_position.second, 0.0, 0.0, 0.0);
     win.draw_line(win.window_size().second - 10, mouse_position.second, win.window_size().second, mouse_position.second, 0.0, 0.0, 0.0);
