@@ -41,7 +41,7 @@ Mat2 transpose(Mat2 const& m){
 }
 
 Mat2 make_rotation_mat2(float phi){
-    Mat2 result{cos(phi), -sin(phi), sin(phi), -cos(phi)};
+    Mat2 result{std::cos(phi), -std::sin(phi), std::sin(phi), -std::cos(phi)};
     return result;
 }
 

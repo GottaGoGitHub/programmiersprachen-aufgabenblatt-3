@@ -4,6 +4,7 @@
 #include <cmath>
 #include "rectangle.hpp"
 #include "color.hpp"
+#include "circle.hpp"
 
 
 int main(int argc, char* argv[])
@@ -41,9 +42,15 @@ int main(int argc, char* argv[])
     }
 
     Color red{1.0, 0.0, 0.0};
+    Color blue{0.0, 0.0, 1.0};
     Vec2 v1{10.0, 20.0};
     Vec2 v2{60.0, 70.0};
+    Vec2 v3{200.0, 200.0};
     Rectangle rec{v1, v2, red};
+    rec.draw(win);
+    Circle c{v3, 100.0, blue};
+    c.draw(win);
+
 
     win.draw_line(0, mouse_position.second, 10, mouse_position.second, 0.0, 0.0, 0.0);
     win.draw_line(win.window_size().second - 10, mouse_position.second, win.window_size().second, mouse_position.second, 0.0, 0.0, 0.0);

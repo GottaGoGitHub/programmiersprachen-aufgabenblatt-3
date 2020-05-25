@@ -7,12 +7,11 @@ float Rectangle::circumference(){
     return result;
 }
 
-/*
-void Rectangle::draw(Window const& w){
+
+void Rectangle::draw(Window const& w) const{
     w.draw_line(min_.x, min_.y, max_.x, min_.y, color_.r, color_.g, color_.b, 1.0f);
     w.draw_line(max_.x, min_.y, max_.x, max_.y, color_.r, color_.g, color_.b, 1.0f);
     w.draw_line(min_.x, min_.y, min_.x, max_.y, color_.r, color_.g, color_.b, 1.0f);
     w.draw_line(min_.x, max_.y, max_.x, max_.y, color_.r, color_.g, color_.b, 1.0f);
     return;
 }
-*/
