@@ -47,9 +47,9 @@ int main(int argc, char* argv[])
     Vec2 v2{60.0, 70.0};
     Vec2 v3{200.0, 200.0};
     Rectangle rec{v1, v2, red};
-    rec.draw(win);
+    rec.draw(win, 5.0);
     Circle c{v3, 100.0, blue};
-    c.draw(win);
+    c.draw(win, 2.0f);
 
 
     win.draw_line(0, mouse_position.second, 10, mouse_position.second, 0.0, 0.0, 0.0);
