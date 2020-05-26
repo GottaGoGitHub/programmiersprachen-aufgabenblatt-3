@@ -5,6 +5,7 @@
 #include "rectangle.hpp"
 #include "color.hpp"
 #include "circle.hpp"
+#include <vector>
 
 
 int main(int argc, char* argv[])
@@ -46,9 +47,16 @@ int main(int argc, char* argv[])
     Vec2 v1{10.0, 20.0};
     Vec2 v2{60.0, 70.0};
     Vec2 v3{200.0, 200.0};
+
+    std::vector<Rectangle> rec_vector;
+    std::vector<Circle> circ_vector;
+
     Rectangle rec{v1, v2, red};
+    rec_vector.push_back(rec);
     rec.draw(win, 1.5);
+
     Circle c{v3, 100.0, blue};
+    circ_vector.push_back(c);
     c.draw(win, 2.0f);
 
     Vec2 mp{mouse_position.first, mouse_position.second};
