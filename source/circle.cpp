@@ -15,3 +15,11 @@ void Circle::draw(Window const& w, float thickness) const{
     }
     return;
 }
+
+bool Circle::is_inside(Vec2 const& v){
+    float distance_to_center = sqrt(pow((v.x - center_.x), 2) + pow((v.y - center_.y), 2));
+    if(distance_to_center < radius_){
+        return true;
+    }
+    return false;
+}

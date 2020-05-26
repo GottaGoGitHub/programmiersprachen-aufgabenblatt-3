@@ -47,10 +47,17 @@ int main(int argc, char* argv[])
     Vec2 v2{60.0, 70.0};
     Vec2 v3{200.0, 200.0};
     Rectangle rec{v1, v2, red};
-    rec.draw(win, 5.0);
+    rec.draw(win, 1.5);
     Circle c{v3, 100.0, blue};
     c.draw(win, 2.0f);
 
+    Vec2 mp{mouse_position.first, mouse_position.second};
+    if(rec.is_inside(mp) == true){
+      rec.draw(win, 3.0);
+    }
+    if(c.is_inside(mp) == true){
+      c.draw(win, 4.0);
+    }
 
     win.draw_line(0, mouse_position.second, 10, mouse_position.second, 0.0, 0.0, 0.0);
     win.draw_line(win.window_size().second - 10, mouse_position.second, win.window_size().second, mouse_position.second, 0.0, 0.0, 0.0);
